@@ -4,16 +4,11 @@ jobs:
   commits_check_job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
         name: checkout
       - name: Get PR Commits
         id: 'get-pr-commits'
-        uses: tim-actions/get-pr-commits@master
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Get PR Commits
-        id: 'get-pr-commits2'
-        uses: ./status/get-all-pr-commits@master
+        uses: ./.github/actions/status
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: list files
