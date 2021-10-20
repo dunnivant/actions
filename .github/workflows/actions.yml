@@ -1,0 +1,13 @@
+name: Sanity Check
+on: [push]
+jobs:
+  commits_check_job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: checkout
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: list files
+        run: |
+          ls ${{ github.workspace }}
