@@ -11,6 +11,11 @@ jobs:
         uses: tim-actions/get-pr-commits@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Get PR Commits
+        id: 'get-pr-commits2'
+        uses: ./status/get-all-pr-commits@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: list files
         run: |
           ls ${{ github.workspace }}
