@@ -6,6 +6,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: checkout
+      - name: Get PR Commits
+        id: 'get-pr-commits'
+        uses: tim-actions/get-pr-commits@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: list files
