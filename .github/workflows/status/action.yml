@@ -1,0 +1,11 @@
+name: 'get-all-pr-commits'
+description: 'bleh'
+inputs:
+  token:
+    required: true
+outputs:
+  commits:
+    description: 'commits in pr'
+runs:
+  using: 'node12'
+  main: 'index.js'
