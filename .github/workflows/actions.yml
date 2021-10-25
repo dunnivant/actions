@@ -1,5 +1,5 @@
 name: Sanity Check
-on: [pull_request]
+on: [status]
 jobs:
   commits_check_job:
     runs-on: ubuntu-latest
